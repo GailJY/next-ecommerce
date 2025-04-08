@@ -6,7 +6,7 @@ import Cookies from "js-cookie";
 import { createContext, ReactNode } from "react";
 
 const refreshToken = JSON.parse(Cookies.get("refreshToken") || "{}");
-
+// console.log(process.env.PUBLIC_WIX_CLIENT_ID)
 const wixClient = createClient({
   modules: {
     products,
@@ -14,10 +14,10 @@ const wixClient = createClient({
     // currentCart
   },
   auth: OAuthStrategy({
-    clientId: process.env.PUBLIC_WIX_CLIENT_ID!,
-    // tokens: {
-    //   refreshToken, accessToken: { value: "", expiresAt: 0 },
-    // },
+    clientId: process.env.NEXT_PUBLIC_WIX_CLIENT_ID!,
+    tokens: {
+      refreshToken, accessToken: { value: "", expiresAt: 0 },
+    },
   }),
 });
 
