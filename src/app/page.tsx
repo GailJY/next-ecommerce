@@ -2,6 +2,7 @@
 
 import { WixClientContext } from "@/context/wixContext";
 import { useContext, useEffect } from "react";
+import Slider from "@/components/Slider";
 const HomePage = () => {
   const wixClient = useContext(WixClientContext);
   console.log(wixClient)
@@ -17,7 +18,10 @@ const HomePage = () => {
 
 
   return (
-    <div className=''>HomePage</div>
+    <div className=''>
+
+      <Slider/>
+    </div>
   )
 }
 
